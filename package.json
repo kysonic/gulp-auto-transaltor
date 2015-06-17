@@ -1,0 +1,36 @@
+{
+  "name": "gulp-auto-translator",
+  "version": "0.0.1",
+  "description": "Gulp Auto Translate helps you to resolve translation issues. Especially it will help developers who didn't plan project's multi languages before.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified yet \"  && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kysonic/gulp-auto-transaltor.git"
+  },
+  "author": {
+    "name": "Anton Miroshnichenko",
+    "email": "soooyc@gmail.com",
+    "url": "https://designmap.herokuapp.com"
+  },
+  "licenses": {
+    "type": "MIT",
+    "url": "https://github.com/stevelacy/gulp-stylus/raw/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/kysonic/gulp-auto-transaltor/issues"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "keyword": "gulp translate angular polymer",
+  "dependencies": {
+    "async": "^1.2.1",
+    "gulp-util": "^3.0.5",
+    "promise": "^7.0.3",
+    "through2": "^2.0.0"
+  }
+}
