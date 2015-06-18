@@ -36,7 +36,8 @@ gulp.task('translate', function () {
             useLangFiles: true, // create language files?
             translate: { // translate directions
                 "ruRU": "ru", // Will be created ./examples/languages/ruRU.json, translate direction en(basic)-ru
-                "enUS": "en"  // Will be created ./examples/languages/enUS.json, translate direction en(basic)-en
+                "enUS": "en",  // Will be created ./examples/languages/enUS.json, translate direction en(basic)-en
+                "esES": "es"  // Will be created ./examples/languages/esES.json, translate direction en(basic)-es
             }
         }));
 });
@@ -92,18 +93,37 @@ Okay! Let's talk about options more detailed. Gulp Auto Translator has a four gr
 
 ### Regular Expression
 
-This group contains next parameters:
+The group contains next parameters:
 
 - regexp - It's common regular expression, which will search for you words of your project for a translation. For instance, if i want to find any phrase concluded into tag (innerHTML), i need to add something like: />[\s\S]+?<\//g
 - cleaner - After finding my phrase will be looks like "> My cool phrase </", of course i should clean it. How i can do it? Very simple! With help of "cleaner" option. In my case i will write: /(^[>]+|[<\/]+$)/g
 
 ### Code 
 
-This group contains next parameters:
+The group contains next parameters:
 
 - code (no default) - it's language from which wil  on, which located in "translate" option... So we will be have a translation - "Blog", next GAT will make from this code - BLOG. Perhaps this code will be need you for replacement later, also it is needed for creation of language files.
-- wordCodeLimit (default - 3) - supposing we will have next phrase "It is my blog", when GAT will be create code for the phrase it will be spliting the phrase on words: "It", "is", "my", "blog", and after it takes only three of them, and will join the words in "ITISMYBLOG" code. 
+- wordCodeLimit (default - 3) - supposing we will have next phrase "It is my blog, man!", when GAT will create code for the phrase it will split the phrase on words: "It", "is", "my", "blog", "Man", and after it takes only four of them, and will join the words in "ITISMYBLOG" code. 
 - codeLimit (default - 20) - Also your code after joining will be too much long, for instance: "WITHREPRESENTATIONWICHNEEDYOU". For this case we have "codeLimit" option. It will cut your long code word.
 - useFileNamePrefix (default - false) - If you have a concerns about that your code may repeat in some case, when your phrases will be a different, you can add to the code special prefix, which will be crated from name of current file name. For example if your current file called "global.html", then your prefix will be: "_GLOBAL", so your full code may be like this: "WITHYOU_GLOBAL".
+
+### Translation
+
+The group contains next parameters:
+
+- basic (no default) - It's first point of a translate direction, for example if all of found phrases by regexp will be on English, you should to point 'en' in "basic" option. Thus when GAT will find phrase and want to translate it for example on Russian - the translate direction in this case will be "en-ru".
+- translate (no default) - it is translate matrix. For instance
+	```
+		"ruRU":"ru"
+	```
+	where "ruRU" it is: firstly - name of language file, secondly - may be in "code" option in sense of code language.
+	and "ru" - direction of translate, "en-ru", because basic is "en".
+- useLangFiles (default - false) - If it exposes like "true" - GAT will create language files, else - not.
+- path (no default) - Path to directory in which will put language files. 
+- createNewFile (default - false) - If this options will be exposed like "true" - GAT will create new file with same content, but all of found phrases will be substituted by "replacment" string.
+- replacment (no default) - This string will substitute all found phrases in your document. Also the replacement string may contain special codes like:
+     - #CODE# - the finished replacement will contain code of phrase. For example if replacement was like: 
+         "{{'#CODE#' | translate}}" then in translated file we will seen "{{'WITHYOU_GLOBAL' | translate}}" string on place of found phrase.
+     - #TRANSLATE# - put on found phrase place a translation of it. For example if we have "#TRANSLATE#" replacement string then in translated file we will have for instance "Переведенная строка". 
 
 
