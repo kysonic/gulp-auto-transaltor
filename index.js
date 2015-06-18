@@ -20,6 +20,7 @@ var spacesRegexp = /[\s]+/g;
 var stRegexp = /[,\-\:\.]/g;
 var escapeRegexp = /([\.\^\$\*\+\?\(\)\[\{\\\|\-\,])/g;
 var letterRegexp = /[a-zA-Zа-яА-Я]/;
+var notLetterRegexp = /[^a-zA-Zа-яА-Я]/;
 /**
  * Because we use FREE Yandex Translate api,
  * the code of auto translator can be changed sometimes.
@@ -113,15 +114,16 @@ module.exports = function (options) {
         if (file.isNull())return cb(null, file);
         // Checkout streaming support
         if (file.isStream()) return cb(new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
-
-        if(!options.regexp) return cb(new gutil.PluginError(PLUGIN_NAME, 'For searching you need to add Regular expression.'));
         // Define new translator to current file.
         var translator = new Translator();
         //Find all matches of Regular Expression added in options.
         translator.fileContent = file.contents.toString('utf8');
         translator.fileName = path.basename(file.path).split('.')[0].substr(0,10).toUpperCase();
+
+        if(!options.regexp) return cb(new gutil.PluginError(PLUGIN_NAME, 'For searching you need to add Regular Expression.'));
         async.each(translator.fileContent.match(options.regexp), function(item,callback){
             var mtch = item.trim();
+
             // Checkout a empty string
             if(!translator.isEmptyString(mtch)) {
                 // Checkout numbers
@@ -151,7 +153,10 @@ module.exports = function (options) {
                 translator.languageCursor[options.code] = translator.languageCursor[options.code] || {};
                 translator.cursor[options.code].forEach(function(item,itemKey){
                     var translate = item.translate[0];
-                    var code = translate.replace(stRegexp,' ').split(' ').splice(0,options.wordCodeLimit || 3).join('').substr(0,options.codeLimit || 20).toUpperCase();
+                    var code = translate.replace(stRegexp,' ').trim().replace(notLetterRegexp,'')
+                                        .replace(spacesRegexp,'')
+                                        .split(' ').splice(0,options.wordCodeLimit || 3).join('')
+                                        .substr(0,options.codeLimit || 20).toUpperCase();
                     if (!translator.isEmptyString(code) && letterRegexp.test(code)) {
                         // Add additional prefix to code.
                         if(options.useFileNamePrefix) code = code+'_'+translator.fileName;
@@ -163,7 +168,8 @@ module.exports = function (options) {
                             if(/#TRANSLATE#/.test(options.replacement)) replacement = options.replacement.replace('#CODE#',code);
                             if(!replacement) return cb(new gutil.PluginError(PLUGIN_NAME, 'You should set in your replacement string one of next codes: #CODE#, #TRANSLATE#'));
                             // Deal with it!
-                            var regexp = new RegExp(item.original.replace(escapeRegexp,'\\$1'),'g');
+                            var regexp = new RegExp(item.original.replace(escapeRegexp,'\\$1'));
+
                             translator.fileContent = translator.fileContent.replace(regexp,replacement);
                         }
                         // Language cursor (it is representation of future language file)
@@ -205,10 +211,12 @@ module.exports = function (options) {
                         try{languageData = JSON.parse(fileContent);}catch(e){console.log(e)};
 
                     // Set all of new language item in language file representation.
-                    Object.keys(translator.languageCursor[langKey]).forEach(function(code){
-                        var translation = translator.languageCursor[langKey][code];
-                        if(!languageData[code]) languageData[code] = translation;
-                    });
+                    if(translator.languageCursor[langKey]) {
+                        Object.keys(translator.languageCursor[langKey]).forEach(function(code){
+                            var translation = translator.languageCursor[langKey][code];
+                            if(!languageData[code]) languageData[code] = translation;
+                        });
+                    }
                     // Save file
 
                     fs.writeFile(filePath,JSON.stringify(languageData, null, '\t'));
@@ -216,7 +224,13 @@ module.exports = function (options) {
             }
             // Save file content now!
             if(options.replacement) {
-                fs.writeFile(file.path,translator.fileContent);
+                // If we on this function GAT will create new file,
+                // else it will replacement in current file.
+                if(options.createNewFile) {
+                    var newPath = path.dirname(file.path)+'/'+ path.basename(file.path,path.extname(file.path)) + '_translated' +path.extname(file.path);
+                    fs.writeFile(newPath,translator.fileContent);
+                }
+                else fs.writeFile(file.path,translator.fileContent);
             }
         });
     });

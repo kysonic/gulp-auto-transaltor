@@ -1,0 +1,72 @@
+<body class="theme-base-10">
+
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+ styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+    <img style="width: 100%; margin-bottom: 0; border-radius: 0;" src="/public/me.jpg">
+
+    <div class="sidebar-item">
+        <p>Pascal Precht. Vimthusiast. Loves gifs. Runs <a href="http://thoughtram.io">thoughtram</a>.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a class="sidebar-nav-item" href="/">Blog</a>
+        <a class="sidebar-nav-item" href="/about/">About</a>
+        <a class="sidebar-nav-item" href="/talks/">Talks</a>
+        <a class="sidebar-nav-item" href="https://github.com/PascalPrecht">GitHub</a>
+        <a class="sidebar-nav-item" href="https://twitter.com/PascalPrecht">Twitter</a>
+    </nav>
+
+    <div class="sidebar-item">
+        <p>
+            &copy; 2015. All rights reserved.
+        </p>
+    </div>
+</div>
+
+
+<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+     content to avoid any CSS collisions with our real content. -->
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+            <h3 class="masthead-title">
+                <a href="/" title="Home">Pascal Precht</a>
+                <small>Thoughts on Vim mastery and the future of the web</small>
+            </h3>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="post">
+            <h1 class="post-title">Inheritance and composition with Polymer</h1>
+            <span class="post-date">14 Jul 2014</span>
+
+
+
+            <p>Actually, Web Components are a set of four different specifications. These are <strong>HTML
+                Imports</strong>, <strong>HTML Templates</strong>, <strong>Custom Elements</strong> and <strong>Shadow
+                DOM</strong>. I will not go into much detail here since that's not the scope of this article. If you
+                want to learn more about Web Components in general, I recommend checking out the community project <a
+                        href="http://webcomponents.org">webcomponents.org</a>, which is full of useful resources and
+                information about the technologies.</p>
+
+            <p> With evolving standards come evolving tools, libraries and frameworks. When it comes to web components,
+                there are basically two frameworks that try to make your life easier: <a href="http://www.x-tags.org/">X-Tag</a>
+                by Mozilla and <a href="http://polymer-project.org">Polymer</a>, a Google project. <strong>Both use the
+                    same polyfills under the hood</strong> to make the four web component technologies work in all major
+                browsers. However, whereas X-Tag API abstracts only the imperative way of building web components, goes
+                Polymer a step further and also provides a declarative way.</p>
+
+            <p>For example, defining your own custom element with Polymer looks something like this:</p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
