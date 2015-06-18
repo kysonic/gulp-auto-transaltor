@@ -23,14 +23,14 @@ gulp.task('translate', function () {
     return gulp.src('./examples/source/pascal.page.html')
         .pipe(autoTranslator({
             regexp:/>[\s\S]+?</g, // Regular Expression for finding needed words
-            cleaner:/(^[>]+|[<\/]+$)/g, // Clean > < symbols after finding
+            cleaner:/(^[>]+|[<\/]+$)/g, // Cleaning  "> <" symbols after finding
             yandexApiKey:'trnsl.x.x.xxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxx', // Yandex Translate API KEY
-            basic:"en", // Language of words in your document. 
-            code: "enUS", // Which language will be use to create code for yours language files.
-            useFileNamePrefix: true, // Use prefix which will be added to code. This prefix creating of name of current file.
-            codeLimit: 20, // Max length of our code
+            basic:"en", // A language of words in your project files. 
+            code: "enUS", // Which language will be used to create code for your language files.
+            useFileNamePrefix: true, // Use prefix which will be added to code. This prefix will be created for name of current file.
+            codeLimit: 20, // Max length of your code
             wordCodeLimit: 3, // Max word count in your language code
-            replacement: '{{"#CODE#" | translate}}', // Replacement, this thing will replace all of finded phrase by regexp to this string (This is example of replacment for angular)
+            replacement: '{{"#CODE#" | translate}}', // Replacement, this thing will replace all of found phrases by regexp to this string (This is example of replacement for angular)
             createNewFile: true, // Create new File which will be called fileName_translated.html for instance...
             path: './examples/languages/', // Path to folder where would be your language files.
             useLangFiles: true, // create language files?
@@ -80,3 +80,19 @@ And in ./examples/languages folder now exist new file, which called ruRU.json wi
 	"GITHUB_PASCAL": "На github",
 	"TWITTER_PASCAL": "Твиттер"
 ```
+
+### More words about options
+
+Okay! Let's talk about options more detailed. Gulp Auto Translator has a four group of options: 
+
+  - Regular Expression Group
+  - Code Group
+  - Translation Group
+  - Miscellaneous
+
+### Regular Expression
+
+This group contains next parameters:
+
+- regexp - It's common regular expression, which will search for you words of your project for a translation. For instance, if i want to find any phrase concluded into tag (innerHTML), i need to add something like: />[\s\S]+?<\//g
+- cleaner - After finding my phrase will be looks like "> My cool phrase </", of course i should clean it. How i can do it? Very simple! With help of "cleaner" option. In my case i will write: /(^[>]+|[<\/]+$)/g
