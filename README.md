@@ -10,7 +10,7 @@ First you should install gulp, of course if you don't have one yet.
   npm instal gulp -g
 ```
 
-Second you need to install gulp-auto-translator and how you already guess:
+Second you need to install gulp-auto-translator and how you already guessed:
 
 ```
   npm instal gulp-auto-translator 
@@ -40,6 +40,11 @@ gulp.task('translate', function () {
             }
         }));
 });
+```
+Execute (in your root folder):
+
+```
+gulp translate
 ```
 
 The Source file has contained this before changes: 
