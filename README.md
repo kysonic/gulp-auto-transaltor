@@ -136,7 +136,7 @@ Currently we will use only Yandex Translate Api, because it is free. Maybe later
 
 ### Conclusion
 
-So how i think that this plugin will be unpopular i won't post here "Contributing guide" here... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
+So how i think that this plugin will be unpopular i won't post here "Contributing guide"... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
 
 - skype: soooyc
 - by email: soooyc@gmail.com
