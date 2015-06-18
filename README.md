@@ -1,6 +1,6 @@
 # gulp-auto-transaltor
 
-Supposing you have a project in which you haven't thought about internalization before this moment. And you need to make it right now! Well, you are in right place. Gulp auto translate created to help resolve same issues. It let you to translate your project quickly and inexpensively. Let's begin.
+Supposing you have a project in which you haven't thought about internalization before this moment. And you need to make it right now! Well, you are in right place. Gulp auto translator (GAT) created to help resolve same issues. It let you to translate your project quickly and inexpensively. Let's begin.
 
 ### Quick start
 
@@ -96,3 +96,14 @@ This group contains next parameters:
 
 - regexp - It's common regular expression, which will search for you words of your project for a translation. For instance, if i want to find any phrase concluded into tag (innerHTML), i need to add something like: />[\s\S]+?<\//g
 - cleaner - After finding my phrase will be looks like "> My cool phrase </", of course i should clean it. How i can do it? Very simple! With help of "cleaner" option. In my case i will write: /(^[>]+|[<\/]+$)/g
+
+### Code 
+
+This group contains next parameters:
+
+- code (no default) - it's language from which will be created code for language files, for example - "BLOG_PASCAL" (in this case PASCAL it is name of file from which was taken the phrase for translation, but we will speak about it later). Common principles: For example we have next string:  <a class="sidebar-nav-item" href="/">Blog</a>, our regexp will find for us a next word: "Blog", GAT starts to create code from "enUS" translation direction, which located in "translate" option... So we will be have a translation - "Blog", next GAT will make from this code - BLOG. Perhaps this code will be need you for replacement later, also it is needed for creation of language files.
+- wordCodeLimit (default - 3) - supposing we will have next phrase "It is my blog", when GAT will be create code for the phrase it will be spliting the phrase on words: "It", "is", "my", "blog", and after it takes only three of them, and will join the words in "ITISMYBLOG" code. 
+- codeLimit (default - 20) - Also your code after joining will be too much long, for instance: "WITHREPRESENTATIONWICHNEEDYOU". For this case we have "codeLimit" option. It will cut your long code word.
+- useFileNamePrefix (default - false) - 
+
+
