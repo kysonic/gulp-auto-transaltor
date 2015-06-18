@@ -101,9 +101,9 @@ This group contains next parameters:
 
 This group contains next parameters:
 
-- code (no default) - it's language from which will be created code for language files, for example - "BLOG_PASCAL" (in this case PASCAL it is name of file from which was taken the phrase for translation, but we will speak about it later). Common principles: For example we have next string:  <a class="sidebar-nav-item" href="/">Blog</a>, our regexp will find for us a next word: "Blog", GAT starts to create code from "enUS" translation direction, which located in "translate" option... So we will be have a translation - "Blog", next GAT will make from this code - BLOG. Perhaps this code will be need you for replacement later, also it is needed for creation of language files.
+- code (no default) - it's language from which wil  on, which located in "translate" option... So we will be have a translation - "Blog", next GAT will make from this code - BLOG. Perhaps this code will be need you for replacement later, also it is needed for creation of language files.
 - wordCodeLimit (default - 3) - supposing we will have next phrase "It is my blog", when GAT will be create code for the phrase it will be spliting the phrase on words: "It", "is", "my", "blog", and after it takes only three of them, and will join the words in "ITISMYBLOG" code. 
 - codeLimit (default - 20) - Also your code after joining will be too much long, for instance: "WITHREPRESENTATIONWICHNEEDYOU". For this case we have "codeLimit" option. It will cut your long code word.
-- useFileNamePrefix (default - false) - 
+- useFileNamePrefix (default - false) - If you have a concerns about that your code may repeat in some case, when your phrases will be a different, you can add to the code special prefix, which will be crated from name of current file name. For example if your current file called "global.html", then your prefix will be: "_GLOBAL", so your full code may be like this: "WITHYOU_GLOBAL".
 
 
