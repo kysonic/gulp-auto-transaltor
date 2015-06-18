@@ -1,6 +1,6 @@
 {
   "name": "gulp-auto-translator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Gulp Auto Translate helps you to resolve translation issues. Especially it will help developers who didn't plan project's multi languages before.",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "test": "tests"
   },
   "keyword": "gulp translate angular polymer",
+  "readmeFilename": "README.md",
   "dependencies": {
     "async": "^1.2.1",
     "gulp-util": "^3.0.5",
