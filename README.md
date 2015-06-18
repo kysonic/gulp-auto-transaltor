@@ -122,8 +122,14 @@ The group contains next parameters:
 - path (no default) - Path to directory in which will put language files. 
 - createNewFile (default - false) - If this options will be exposed like "true" - GAT will create new file with same content, but all of found phrases will be substituted by "replacment" string.
 - replacment (no default) - This string will substitute all found phrases in your document. Also the replacement string may contain special codes like:
-     - #CODE# - the finished replacement will contain code of phrase. For example if replacement was like: 
-         "{{'#CODE#' | translate}}" then in translated file we will seen "{{'WITHYOU_GLOBAL' | translate}}" string on place of found phrase.
+     - #CODE# - the finished replacement will contain code of the phrase. For example if replacement was like: 
+         "{{'#CODE#' | translate}}" then in translated file we will see "{{'WITHYOU_GLOBAL' | translate}}" on place of found phrase.
      - #TRANSLATE# - put on found phrase place a translation of it. For example if we have "#TRANSLATE#" replacement string then in translated file we will have for instance "Переведенная строка". 
+     
+### Miscellaneous
+
+Currently we will use only Yandex Translate Api, because it is free. Maybe later i will add google api for wealthy guys. Okay! In this group we have next options:
+
+- yandexApiKey (no default) - key for yandex translate api. Get it [by link ](https://tech.yandex.com/keys/get/?service=trnsl)
 
 
