@@ -132,4 +132,14 @@ Currently we will use only Yandex Translate Api, because it is free. Maybe later
 
 - yandexApiKey (no default) - key for yandex translate api. Get it [by link ](https://tech.yandex.com/keys/get/?service=trnsl)
 
+### Conclusion
+
+So how i think that this plugin will be unpopular i won't post here "Contributing guide" here... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
+
+- skype: soooyc
+- by email: soooyc@gmail.com
+
+Thanks! 
+
+
 
