@@ -126,7 +126,7 @@ About another languages - i suppose it would work, but we have no test yet. If y
 
 ### Conclusion
 
-So how i think that this plugin will be unpopular i won't post here "Contributing guide"... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
+So how i think this plugin will be unpopular i won't post here "Contributing guide"... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
 
 - skype: soooyc
 - by email: soooyc@gmail.com
