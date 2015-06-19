@@ -1,0 +1,60 @@
+<div ng-controller="statistic.main">
+    <nav class="statistic-menu side-menu side-menu_left">
+        <h2 class="side-menu__header" ng-class="{'back-arrow-container':isAdmin}">
+            <a href="/statistic"  class="back-arrow" ng-if="isAdmin">
+                <i class="icon icon-double-arrow-left side-menu__toggle-v-icon arrow-main"></i>
+                <i class="icon icon-double-arrow-right side-menu__toggle-v-icon arrow-second"></i>
+            </a>
+            {{currentUser.first_name || currentUser.username}}
+        </h2>
+        <div class="side-menu__body" >
+            <div class="side-menu__group">
+                <a ng-href="/statistic/{{currentUser.id}}/stat" class="side-menu__title" ng-class="{inactive:menuSelected!='stat'}">
+                    <i class="side-menu__icon">
+                        <i class="icon icon-stats v-center"></i>
+                    </i>
+                    Статистика
+                </a>
+            </div>
+            <div class="side-menu__group">
+                <a ng-href="/statistic/{{currentUser.id}}/voicemail" class="side-menu__title" ng-class="{inactive:menuSelected!='voicemail'}">
+                    <i class="side-menu__icon">
+                        <i class="icon icon-voicemail v-center"></i>
+                    </i>
+                    Голосовая почта
+                </a>
+            </div>
+            <div class="side-menu__group" ng-if="!1">
+                <a ng-href="/statistic/{{currentUser.id}}/fax" class="side-menu__title" ng-class="{inactive:menuSelected!='fax'}">
+                    <i class="side-menu__icon">
+                        <i class="icon icon-fax v-center"></i>
+                    </i>
+                    Факс
+                </a>
+            </div>
+            <div class="side-menu__group" ng-if="!1">
+                <a ng-href="/statistic/{{currentUser.id}}/phonebook" class="side-menu__title" ng-class="{inactive:menuSelected!='phonebook'}">
+                    <i class="side-menu__icon">
+                        <i class="icon icon-conference v-center"></i>
+                    </i>
+                    Телефонная книга
+                </a>
+            </div>
+            <div class="side-menu__group" ng-if="isAdmin">
+                <a ng-href="/statistic/{{currentUser.id}}/conference"  class="side-menu__title" ng-class="{inactive:menuSelected!='conference'}">
+                    <i class="side-menu__icon">
+                        <i class="icon icon-groups v-center"></i>
+                    </i>
+                    Конференция
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="statistic-content" ng-switch="menuSelected">
+        <div ng-switch-when="stat"      za-statistic-form-stat></div>
+        <div ng-switch-when="voicemail" za-statistic-form-voicemail></div>
+        <div ng-switch-when="fax"       za-statistic-form-fax></div>
+        <div ng-switch-when="phonebook" za-statistic-form-phonebook></div>
+        <div ng-switch-when="conference" za-statistic-form-conf></div>
+    </div>
+</div>
