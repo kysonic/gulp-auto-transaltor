@@ -116,6 +116,14 @@ Currently we will use only Yandex Translate Api, because it is free. Maybe later
 
 - yandexApiKey (no default) - key for yandex translate api. Get it [by link ](https://tech.yandex.com/keys/get/?service=trnsl)
 
+###Languages
+
+Currently we are have a strong support for next languages:
+
+en - English, ru - Russian, es - Spanish, de - German, fr - French, it - Italian, pl - Polish. 
+
+About another languages - i suppose it would work, but we have no test yet. If you can help us with something language missed in this list, we would be glad to take it.
+
 ### Conclusion
 
 So how i think that this plugin will be unpopular i won't post here "Contributing guide"... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
