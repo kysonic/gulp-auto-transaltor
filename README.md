@@ -21,7 +21,7 @@ Second you need to install gulp-auto-translator and how you already guessed:
 Now we have all to start first translation. You need to create gulpfile.js in root directory of your project and create new task:
 
 ```
-gulp.task('pascal', function () {
+gulp.task('translate', function () {
     return gulp.src('./examples/source/pascal.page.html')
         .pipe(autoTranslator({
             yandexApiKey:'trnsl.x.x.xxxxxxxxxxxxxxxxxx.xxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Yandex API Key
