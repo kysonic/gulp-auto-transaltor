@@ -124,6 +124,42 @@ en - English, ru - Russian, es - Spanish, de - German, fr - French, it - Italian
 
 About another languages - i suppose it would work, but we have no test yet. If you can help us with something language missed in this list, we would be glad to take it.
 
+### Additional features
+
+From now GAT can create a excel language file from json languages files. For instance: supposing you have two files in folder ./languages/ - it is ruRu.json and enUS.json. If you execute following task:
+
+```
+gulp.task('assembler', function () {
+    return gulp.src('./languages/*.json')
+        .pipe(Exceler.assembler({
+            path: './excel/assemble.json'
+        }));
+});
+```
+
+Then in ./excel folder got to appear a assamble.json file, which needed to creating a xlsx language file. Next you have to execute following task: 
+
+```
+gulp.task('excel', function () {
+    return gulp.src('./excel/assemble.json')
+        .pipe(Exceler.excel({
+                path: './excel/lang.xlsx'
+            }
+        ));
+});
+```
+
+After you get a lang.xlsx file with one sheet in which will be added next content:
+
+```
+  |   code   |     ruRU     |     enUS     |
+  |   MAIN   |      Мой     |      Main    |
+  |   DOG    |     Собака   |     Dog      |
+  ...... ...... ..... ..... ..... ..... ....
+```
+
+Well, i think it may be a easy and comfortable way to check out your translation.
+
 ### Conclusion
 
 So how i think this plugin will be unpopular i won't post here "Contributing guide"... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
