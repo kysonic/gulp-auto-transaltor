@@ -1,6 +1,6 @@
 # gulp-auto-transaltor 
 
-**Current version: 0.0.5**
+**Current version: 0.0.10**
 
 Supposing you have a project in which you haven't thought about internalization before this moment. And you need to make it right now! Well, you are in right place. Gulp auto translator (GAT) created to help resolve same issues. It let you to translate your project quickly and inexpensively. Let's begin.
 
