@@ -1,0 +1,137 @@
+[
+    {
+        "enUS": "Blog",
+        "ruRU": "Блог",
+        "code": "BLOG"
+    },
+    {
+        "enUS": "About",
+        "ruRU": "О",
+        "code": "ABOUT"
+    },
+    {
+        "enUS": "Talks",
+        "ruRU": "Переговоры",
+        "code": "TALKS"
+    },
+    {
+        "enUS": "GitHub",
+        "ruRU": "На github",
+        "code": "GITHUB"
+    },
+    {
+        "enUS": "Twitter",
+        "ruRU": "Твиттер",
+        "code": "TWITTER"
+    },
+    {
+        "enUS": "\r\n            &copy; 2015. All rights reserved.\r\n        ",
+        "ruRU": "\n",
+        "code": "COPY2015ALLRIGHTSRES"
+    },
+    {
+        "enUS": "Pascal Precht",
+        "ruRU": "Паскаль Precht",
+        "code": "PASCALPRECHT"
+    },
+    {
+        "enUS": "Thoughts on Vim mastery and the future of the web",
+        "ruRU": "Мысли о Вим мастерства и будущее интернета",
+        "code": "THOUGHTSONVIMMASTERY"
+    },
+    {
+        "enUS": "Inheritance and composition with Polymer",
+        "ruRU": "Наследование и композиция с полимерной",
+        "code": "INHERITANCEANDCOMPOS"
+    },
+    {
+        "enUS": "14 Jul 2014",
+        "ruRU": "14 июл 2014",
+        "code": "14JUL2014"
+    },
+    {
+        "enUS": "Actually, Web Components are a set of four different specifications. These are ",
+        "ruRU": "На самом деле, веб-компоненты представляют собой набор из четырех различных спецификаций. Эти",
+        "code": "ACTUALLYWEBCOMPONENT"
+    },
+    {
+        "enUS": "HTML\r\n                Imports",
+        "ruRU": "HTML-код \nИмпорт",
+        "code": "HTMLIMPORTS"
+    },
+    {
+        "enUS": "HTML Templates",
+        "ruRU": "Шаблоны HTML",
+        "code": "HTMLTEMPLATES"
+    },
+    {
+        "enUS": "Custom Elements",
+        "ruRU": "Пользовательские Элементы",
+        "code": "CUSTOMELEMENTS"
+    },
+    {
+        "enUS": " and ",
+        "ruRU": " и",
+        "code": "AND"
+    },
+    {
+        "enUS": "Shadow\r\n                DOM",
+        "ruRU": "Тень \nДом",
+        "code": "SHADOWDOM"
+    },
+    {
+        "enUS": ". I will not go into much detail here since that's not the scope of this article. If you\r\n                want to learn more about Web Components in general, I recommend checking out the community project ",
+        "ruRU": ". Я не буду вдаваться в подробности здесь, так как это не предмет данной статьи. Если вы \nхотите узнать больше о веб-компоненты в целом, я рекомендую проверить сообщества проекта",
+        "code": "IWILLNOTGOINTOMUCHDE"
+    },
+    {
+        "enUS": "webcomponents.org",
+        "ruRU": "webcomponents.org",
+        "code": "WEBCOMPONENTSORG"
+    },
+    {
+        "enUS": ", which is full of useful resources and\r\n                information about the technologies.",
+        "ruRU": ", которая полна полезных ресурсов и \nинформация о технологиях.",
+        "code": "WHICHISFULLOFUSEFULR"
+    },
+    {
+        "enUS": " With evolving standards come evolving tools, libraries and frameworks. When it comes to web components,\r\n                there are basically two frameworks that try to make your life easier: ",
+        "ruRU": " Изменение стандартов приходят развивается инструменты, библиотеки и фреймворки. Когда дело доходит до веб-компоненты, \nсуществуют в основном две рамки, которые пытаются сделать вашу жизнь проще:",
+        "code": "WITHEVOLVINGSTANDARD"
+    },
+    {
+        "enUS": "X-Tag",
+        "ruRU": "Х-Тег",
+        "code": "XTAG"
+    },
+    {
+        "enUS": "\r\n                by Mozilla and ",
+        "ruRU": "\nMozilla и",
+        "code": "BYMOZILLAAND"
+    },
+    {
+        "enUS": "Polymer",
+        "ruRU": "Полимер",
+        "code": "POLYMER"
+    },
+    {
+        "enUS": ", a Google project. ",
+        "ruRU": " в Google проект.",
+        "code": "AGOOGLEPROJECT"
+    },
+    {
+        "enUS": "Both use the\r\n                    same polyfills under the hood",
+        "ruRU": "Как использовать \nже placeholder'ами под капотом",
+        "code": "BOTHUSETHESAMEPOLYFI"
+    },
+    {
+        "enUS": " to make the four web component technologies work in all major\r\n                browsers. However, whereas X-Tag API abstracts only the imperative way of building web components, goes\r\n                Polymer a step further and also provides a declarative way.",
+        "ruRU": " сделать четыре компонента веб-технологии работают во всех крупных \nбраузеры. Однако, в то время как х-тегов интерфейс API абстрагирует только императивный способ создания Web-компонентов, идет \nПолимер шаг вперед и также предусматривает декларативный способ.",
+        "code": "TOMAKETHEFOURWEBCOMP"
+    },
+    {
+        "enUS": "For example, defining your own custom element with Polymer looks something like this:",
+        "ruRU": "Например, определяя свой собственный элемент с полимерным выглядит примерно так:",
+        "code": "FOREXAMPLEDEFININGYO"
+    }
+]

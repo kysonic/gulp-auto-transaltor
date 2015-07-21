@@ -1,7 +1,7 @@
 {
   "name": "gulp-auto-translator",
-  "version": "0.0.4",
-  "description": "Gulp Auto Translate helps you to resolve translation issues. Especially it will help developers who didn't plan project's multi languages before.",
+  "version": "0.0.6",
+  "description": "The Gulp Auto Translator helps you to resolve translation issues. Especially it will help developers who didn't plan project's internazalization before.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified yet \"  && exit 1"

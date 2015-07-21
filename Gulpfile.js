@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    Exceler = require('./exceler.js'),
     autoTranslator = require('./');
 // Task for pascal.page.html (English)
 gulp.task('pascal', function () {
@@ -35,4 +36,24 @@ gulp.task('admin', function () {
                 }
             }
         ));
+});
+
+gulp.task('assembler', function () {
+    return gulp.src('./examples/languages_pascal/*.json')
+        .pipe(Exceler.assembler({
+            path: './examples/excel/assemble.json'
+        }));
+});
+
+gulp.task('excel', function () {
+    return gulp.src('./examples/excel/assemble.json')
+        .pipe(Exceler.excel({
+                path: './examples/excel/lang.xlsx'
+            }
+        ));
+});
+
+gulp.task('parse', function () {
+    return gulp.src('./examples/excel/lang.xlsx')
+        .pipe(Exceler.parse());
 });
