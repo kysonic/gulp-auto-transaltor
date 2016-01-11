@@ -2,7 +2,7 @@
 
 **Current version: 0.0.10**
 
-Supposing you have a project in which you haven't thought about internalization before this moment. And you need to make it right now! Well, you are in right place. Gulp auto translator (GAT) created to help resolve same issues. It let you to translate your project quickly and inexpensively. Let's begin.
+Supposing you have a project in which you haven't thought about internalization before current moment. And you need to make it right now! Well, you are in right place. Gulp auto translator (GAT) created to help resolve same issues. It lets you to translate your project quickly and inexpensively. Let's begin.
 
 ### Quick start
 
@@ -12,7 +12,7 @@ First you should install gulp, of course if you don't have one yet.
   npm instal gulp --save-dev
 ```
 
-Second you need to install gulp-auto-translator and how you already guessed:
+Second you need to install gulp-auto-translator and how you are already guessed:
 
 ```
   npm instal gulp-auto-translator --save-dev
@@ -56,7 +56,7 @@ The Source file has contained this before changes:
     </nav>
 ```
 
-The new file will be contain a next:
+The new file will contain a next:
 
 ```
 <nav class="sidebar-nav">
@@ -103,7 +103,7 @@ The group contains next parameters:
 	```
 	where "ruRU" it is name of language file
 	and "ru" - direction of translate, "en-ru", because fromLanguage is "en".
-- path (no default) - Path to directory in which will put language files. 
+- path (no default) - Path to directory in which will be placed language files. 
 - createNewFile (default - false) - If this options will be exposed like "true" - GAT will create new file with same content, but all of found phrases will be substituted by "replacment" string.
 - replacment (no default) - This string will substitute all found phrases in your document. Also the replacement string may contain special codes like:
      - #CODE# - the finished replacement will contain code of the phrase. For example if replacement was like: 
@@ -162,7 +162,7 @@ Well, i think it may be a easy and comfortable way to check out your translation
 
 ### Conclusion
 
-So how i think this plugin will be unpopular i won't post here "Contributing guide"... If you by some reasons will visit this page and you will not understand "how it works" you always can ask your question here:
+So how i think this plugin will be unpopular i won't post here "Contributing guide"... If you, by some reasons, will visit this page and you will not understand "how it works" you always can ask your question here:
 
 - skype: soooyc
 - by email: soooyc@gmail.com
