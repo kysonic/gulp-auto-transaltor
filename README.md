@@ -2,11 +2,11 @@
 
 **Current version: 0.0.10**
 
-Supposing you have a project in which you haven't thought about internalization before current moment. And you need to make it right now! Well, you are in right place. Gulp auto translator (GAT) created to help resolve same issues. It lets you to translate your project quickly and inexpensively. Let's begin.
+Supposing you have a project in which you didn't think about internalization before this moment. And you have to make it right now! Well, you are in right place. Gulp auto translator (GAT) was created to help with same issues. It allows you to translate your project quickly and inexpensively. Let's begin.
 
 ### Quick start
 
-First you should install gulp, of course if you don't have one yet. 
+First you have to install gulp, of course if you don't have one yet. 
 
 ```
   npm instal gulp --save-dev
@@ -44,7 +44,7 @@ Execute:
 gulp translate
 ```
 
-The Source file has contained this before changes: 
+The Source file contained this before changes: 
 
 ```
   <nav class="sidebar-nav">
@@ -56,7 +56,7 @@ The Source file has contained this before changes:
     </nav>
 ```
 
-The new file will contain a next:
+The new file will contain a following:
 
 ```
 <nav class="sidebar-nav">
@@ -80,7 +80,7 @@ And in ./examples/languages_pascal/ folder now exist new file, which called "ruR
 
 ### More words about options
 
-Okay! Let's talk about options more detailed. Gulp Auto Translator has a four group of options: 
+Okay! Let's talk about options more detailed. Gulp Auto Translator has a three group of options: 
 
   - Code Group
   - Translation Group
@@ -90,11 +90,11 @@ Okay! Let's talk about options more detailed. Gulp Auto Translator has a four gr
 
 The group contains next parameters:
 
-- fileNamePrefix (default - false) - If you have a concerns about that your code may repeat in some case, when your phrases will be a different, you can add to the code special prefix, which will be crated from name of current file name. For example if your current file called "global.html", then your prefix will be: "_GLOBAL", so your full code may be like this: "WITHYOU_GLOBAL".
+- fileNamePrefix (default - false) - If you have a concerns about that your code may repeat in some case, when your phrases will be a different, you can add to the code special prefix, which will be created from name of current file name. For example if your current file called "global.html", then your prefix will be: "_GLOBAL", so your full code may be like this: "WITHYOU_GLOBAL".
 
 ### Translation
 
-The group contains next parameters:
+The group contains following parameters:
 
 - fromLanguage (no default) - It's first point of a translate direction, for example if all of found phrases by regexp will be on English, you should to point 'en' in "basic" option. Thus when GAT will find phrase and want to translate it for example on Russian - the translate direction in this case will be "en-ru". 
 - translate (no default) - it is translate matrix. For instance
@@ -112,13 +112,13 @@ The group contains next parameters:
      
 ### Miscellaneous
 
-Currently we will use only Yandex Translate Api, because it is free. Maybe later i will add google api for wealthy guys. Okay! In this group we have next options:
+Currently we will use only Yandex Translate Api, because it is free. Maybe later i will add google api for wealthy guys. Okay! In this group we have following options:
 
 - yandexApiKey (no default) - key for yandex translate api. Get it [by link ](https://tech.yandex.com/keys/get/?service=trnsl)
 
 ###Languages
 
-Currently we are have a strong support for next languages:
+Currently we have a strong support for next languages:
 
 en - English, ru - Russian, es - Spanish, de - German, fr - French, it - Italian, pl - Polish. 
 
