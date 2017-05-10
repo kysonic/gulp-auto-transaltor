@@ -8,19 +8,19 @@ Supposing you have a project in which you didn't think about internalization bef
 
 First you have to install gulp, of course if you don't have one yet. 
 
-```
-  npm instal gulp --save-dev
+```javascript
+  npm install gulp --save-dev
 ```
 
 Second you need to install gulp-auto-translator and how you are already guessed:
 
-```
-  npm instal gulp-auto-translator --save-dev
+```javascript
+  npm install gulp-auto-translator --save-dev
 ```
 
 Now we have all to start first translation. You need to create gulpfile.js in root directory of your project and create new task:
 
-```
+```javascript
 gulp.task('translate', function () {
     return gulp.src('./examples/source/pascal.page.html')
         .pipe(autoTranslator({
@@ -40,13 +40,13 @@ gulp.task('translate', function () {
 ```
 Execute:
 
-```
+```javascript
 gulp translate
 ```
 
 The Source file contained this before changes: 
 
-```
+```html
   <nav class="sidebar-nav">
         <a class="sidebar-nav-item" href="/">Blog</a>
         <a class="sidebar-nav-item" href="/about/">About</a>
@@ -58,7 +58,7 @@ The Source file contained this before changes:
 
 The new file will contain a following:
 
-```
+```html
 <nav class="sidebar-nav">
         <a class="sidebar-nav-item" href="/">{{"BLOG" | translate}}</a>
         <a class="sidebar-nav-item" href="/about/">{{"ABOUT" | translate}}</a>
